@@ -10,8 +10,14 @@ module.exports = {
     module: {
         rules: [{
             loader: 'babel-loader',
-            test: /.js$/, //when files meet this criteria run them through the babel loader
+            test: /\.js$/, //when files meet this criteria run them through the babel loader
             exclude: /node_modules/
+        }, {
+            test: /\.css$/,
+            use: [
+                'style-loader',
+                'css-loader'
+            ]
         }]
     },
     devtool: 'cheap-module-eval-source-map',
